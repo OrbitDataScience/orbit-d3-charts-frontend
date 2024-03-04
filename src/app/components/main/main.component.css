@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    font-family: sans-serif;
+    background-color: #322f2f;
+}
+
+h2,
+h3,
+h4,
+label {
+    color: #999;
+    font-weight: bold;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.form-group {
+    width: 20%;
+}
+
+li {
+    color: #999;
+    list-style-type: none;
+    text-align: left;
+    cursor: pointer;
+}
+
+li:hover {
+    color: #dedede;
+}

@@ -1,0 +1,61 @@
+<div class="container-fluid">
+  <div class="row" style="text-align: left; margin-top: 20px">
+    <div class="col-6">
+      <h2>Black Friday 2022 - Mapa de Desejos</h2>
+      <h4>Intenções de compra manifestadas no Twitter</h4>
+    </div>
+    <div class="col-6" style="text-align: right">
+      <img src="./assets/img/orbit logo.png" style="width: 30%" />
+    </div>
+  </div>
+
+  <h3>Número de menções produto:</h3>
+
+  <form>
+    <div class="form-group">
+      <label for="select1">Tipo de Gráfico</label>
+      <select
+        class="form-select"
+        aria-label="Default select example"
+        [(ngModel)]="selectedChartType"
+        (change)="filterChart()"
+        name="select1"
+      >
+        <option selected [value]="0">Bolhas</option>
+        <option [value]="1">Radial Tree</option>
+        <option [value]="2">Cluster Tree</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="select2">Categorias</label>
+      <select
+        class="form-select"
+        aria-label="Default select example"
+        [(ngModel)]="selectedCategory"
+        (change)="filterChart()"
+        name="select2"
+      >
+        <option selected [value]="0">Todas as Categorias</option>
+        <option *ngFor="let data of childrenList" [value]="data.name">
+          {{ data.name }}
+        </option>
+      </select>
+    </div>
+  </form>
+
+  <div class="circles row" style="text-align: center">
+    <!-- gráfico de bolhas -->
+  </div>
+
+  <h3>Relacionamento entre os produtos:</h3>
+
+  <div class="row" style="text-align: center">
+    <div class="col-2">
+      <ol>
+        <li *ngFor="let node of dataNodes" (mouseenter)="forceLegend(node.id)" (mouseleave)="showNodes()">{{node.id}}</li>
+      </ol>
+    </div>
+    <div class="col-10 force"></div>
+    <!-- gráfico de bolhas -->
+  </div>
+</div>
